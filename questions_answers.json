@@ -15,4 +15,29 @@ questions = [
         ],
         answer: "treasure island",
     },
+    {
+        title: "Question Three",
+        photos: [
+            "photo5.jpg",
+            "photo6.jpg"
+        ],
+        answer: "peter pan",
+    },
+    {
+        title: "Question Four",
+        photos: [
+            "photo7.jpg",
+            "photo8.jpg"
+        ],
+        answer: "jungle book",
+    },
 ]
+
+data_answers = [{ 
+    round_one: "treasure island",
+    round_two: "batman",
+    round_three: "peter pan",
+    round_four: "jungle book"
+},
+]
+

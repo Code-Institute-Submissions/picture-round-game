@@ -5,8 +5,8 @@ SCRIPT_PATH = os.path.join(os.getcwd(), os.path.dirname(__file__))
 USER_FILE_NAME = "user_data.json"
 QUESTIONS_FILE_NAME = "questions_answer.json" #Trying to add question json file
 
+#global user_data 
 user_data = []
-
 
 
 def load_user_data(file_name):
@@ -49,17 +49,6 @@ def add_user_data(user, user_data):
 #user_data = load_user_data('user_data.json')
 #write_user_data('user_data.json', user_data)
 
-print(user_data)
-
-user_name = input('Pick your user name ')
-print('Hello', user_name)
-
-user = user_name
-
-
-add_user_data(user, user_data)
-
-print(user_data)
 
 questions = [
     {
@@ -77,6 +66,22 @@ questions = [
             "photo4.jpg"
         ],
         "answer": "treasure island",
+    },
+    {
+        "title": "Question Three",
+        "photos": [
+            "photo5.jpg",
+            "photo6.jpg"
+        ],
+        "answer": "Peter Pan",
+    },
+    {
+        "title": "Question Four",
+        "photos": [
+            "photo7.jpg",
+            "photo8.jpg"
+        ],
+        "answer": "jungle book",
     },
 ]
 
@@ -102,7 +107,9 @@ def check_answer(question_number, user_answer):
     
     return result
 
-    
+user_data = input ("What is your name? ")
+
+print("Hello", user_data)
 
 print("get_question:", get_question(0))#question one in array
 print("get_question:", get_question(1))#question two
