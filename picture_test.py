@@ -1,18 +1,29 @@
 import os
 import json
+from questions_answers import questions
 
 SCRIPT_PATH = os.path.join(os.getcwd(), os.path.dirname(__file__))
 USER_FILE_NAME = "user_data.json"
-QUESTIONS_FILE_NAME = "questions_answer.json" #Trying to add question json file
+QUESTIONS_FILE_NAME = "questions_answer.json" 
 
 #global user_data 
 user_data = []
+dict_data = []
 
+def questions_answers(file_name):
+    
+    if not file_name.startswith('/'):
+        file_name = os.path.join(SCRIPT_PATH, file_name)
+        
+    with open("questions_answers.py") as json_file:
+        dict_data = json.load(json_file.read())
+        print("title" + "photos" + "answer")
+    
+    return dict_data
+    
 
 def load_user_data(file_name):
-    """
-    Load Dictionary file
-    """
+    
     if not file_name.startswith('/'):
         # if not absolute, then make path relative to our location:
         file_name = os.path.join(SCRIPT_PATH, file_name)
@@ -26,13 +37,10 @@ def load_user_data(file_name):
 
     
 def write_user_data(file_name, user_data):
-    """
-    Load Dictionary file
-    """
+    
     if not file_name.startswith('/'):
         # if not absolute, then make path relative to our location:
         file_name = os.path.join(SCRIPT_PATH, file_name)
-
     
     with open(file_name, "w") as f:
         f.write(json.dumps(user_data))
@@ -49,41 +57,16 @@ def add_user_data(user, user_data):
 #user_data = load_user_data('user_data.json')
 #write_user_data('user_data.json', user_data)
 
+user_data = load_user_data(USER_FILE_NAME)
 
-questions = [
-    {
-        "title": "Question One",
-        "photos": [
-            "photo1.jpg",
-            "photo2.jpg"
-        ],
-        "answer": "treasure island",
-    },
-    {
-        "title": "Question Two",
-        "photos": [
-            "photo3.jpg",
-            "photo4.jpg"
-        ],
-        "answer": "treasure island",
-    },
-    {
-        "title": "Question Three",
-        "photos": [
-            "photo5.jpg",
-            "photo6.jpg"
-        ],
-        "answer": "Peter Pan",
-    },
-    {
-        "title": "Question Four",
-        "photos": [
-            "photo7.jpg",
-            "photo8.jpg"
-        ],
-        "answer": "jungle book",
-    },
-]
+user = {}
+user['score'] = 100
+user['name'] = input ("What is your name? ")
+user_data.append(user)
+
+write_user_data(USER_FILE_NAME, user_data)
+
+print("Hello", user_data)
 
 
 data_answers = { 
@@ -101,15 +84,13 @@ def check_answer(question_number, user_answer):
     
     user_answer = user_answer.lower().strip()
     
+    dict_data = open("questions_answers.py", "r")
     question = questions[question_number]
     
     result = question["answer"] == user_answer
     
     return result
 
-user_data = input ("What is your name? ")
-
-print("Hello", user_data)
 
 print("get_question:", get_question(0))#question one in array
 print("get_question:", get_question(1))#question two
