@@ -1,7 +1,3 @@
-.h1 .mb-5{
-  padding-top: 100px;
-}
-
 .no-gutters{
     padding-left: 5em;
     padding-right: 5em;
@@ -18,6 +14,10 @@
 
 .next-button{
   text-align: center
+}
+
+.list-answers{
+  list-style-position: inside;
 }
 
 @-webkit-keyframes lightSpeedIn {
