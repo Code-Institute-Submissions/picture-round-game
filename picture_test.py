@@ -72,6 +72,10 @@ print("Hello", user_data)
 data_answers = { 
     "round_one": "treasure island",
     "round_two": "batman",
+    "round_three": "charlotte's web",
+    "round_four": "jungle book",
+    "round_five": "the arabian nights",
+    "round_six": "king solomon's mines",
 }
 
 def get_question(question_number):
@@ -94,11 +98,19 @@ def check_answer(question_number, user_answer):
 
 print("get_question:", get_question(0))#question one in array
 print("get_question:", get_question(1))#question two
+print("get_question:", get_question(2))#question three
+print("get_question:", get_question(3))#question four
+print("get_question:", get_question(4))#question five
+print("get_question:", get_question(5))#question six
 
 print("check_answer:", check_answer(0, "test")) #checking function works
 print("check_answer:", check_answer(0, "Treasure Island")) #checking answer should return True  
 print("check_answer:", check_answer(0, " TReAsuRe Island  "))#checking answer should return True  
 print("check_answer:", check_answer(0, " 123456  "))#checking answer should return False  
-print("check_answer:", check_answer(0, " £$%^&*()  "))#checking answer should return False 
+print("check_answer:", check_answer(0, " £$%^&*()  "))#checking answer should return False
+print("check_answer:", check_answer(2, "charlotte's web"))#Answer should returen true 
+print("check_answer:", check_answer(3, "jungle book"))#Answer should returen true 
+print("check_answer:", check_answer(4, "the arabian nights"))#Answer should returen true 
+print("check_answer:", check_answer(5, "king solomon's mines"))#Answer should returen true 
 
 print("all tests passed")

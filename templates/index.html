@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/overide-stlye.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/animate/bounce-enters/bounceInLeft.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/animate/bounce-enters/bounceInRight.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/animate/bounce-exit/bounceOutLeft.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/animate/bounce-exit/bounceOutRight.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/landing-page.min.css') }}" type="text/css" />
 
 </head>
@@ -28,7 +32,7 @@
     </nav>
 
     <!-- Masthead -->
-    <header class="masthead text-white text-center">
+    <header class="masthead text-white text-center showcase-img" style="background-image: url('{{url_for('static',filename='img/light5.jpg') }}');   ">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -39,7 +43,7 @@
                     <form>
                         <div class="form-row">
                             <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                <input type="email" class="form-control form-control-lg" placeholder="Enter User name.....">
+                                <input type="text" class="form-control form-control-lg" placeholder="Enter User name.....">
                             </div>
                             <div class="col-12 col-md-3">
                                 <button type="submit" class="btn btn-block btn-lg btn-primary">User Name</button>
@@ -62,6 +66,9 @@
                         </div>
                         <h3>Start Game</h3>
                         <p class="lead mb-0">Check spelling before hitting enter</p>
+                    </div>
+                    <div>
+                        <button id="start" class="btn btn-block btn-lg btn-primary button">Start</button>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -88,18 +95,40 @@
     <!--------------------------------------- Need to hide this ------------------------------------------>
     <!-- Image Showcases -->
     <section class="showcase">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
+        <!----------------------------------- Questoin One ----------------------------------------------->
+        <div id="picture-container" class="container-fluid p-0 ">
+            <h2 class="text-center">Picture One</h2>
+            <div class="row no-gutters ">
                 <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/volisland.png') }}'); "></div>
                 <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/tchest2.jpg') }}');"></div>
             </div>
             <div class="row no-gutters text-center">
-                <div  id="next-pic" class="col-12 col-md-3">
-                    <button type="submit" class="btn btn-block btn-lg btn-primary button">Next</button>
-                </div>
                 <div class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    <h2>Picture One</h2>
                     <form>
+                        <h2>Question One</h2>
+                        <div class="form-row">
+                            <div class="col-8 text-center">
+                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
+                            </div>
+                            <div class="col-12 col-md-3 text-center">
+                                <button id="q1enter" class="btn btn-block btn-lg btn-primary">Enter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!----------------------------------- Questoin Two ----------------------------------------------->
+        <div id="picture-container-2" class="container-fluid p-0 ">
+            <h2 class="text-center">Picture Two</h2>
+            <div class="row no-gutters ">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/bat.jpg') }}');"></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/man.jpg') }}'); "></div>
+            </div>
+            <div class="row no-gutters text-center">
+                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
+                    <form>
+                        <h2>Question Two</h2>
                         <div class="form-row">
                             <div class="col-8 text-center">
                                 <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
@@ -112,16 +141,97 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/bg-showcase-3.jpg') }}');"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Easy to Use &amp; Customize</h2>
-                    <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+        <!----------------------------------- Questoin Three ----------------------------------------------->
+        <div id="picture-container-3" class="container-fluid p-0 ">
+            <h2 class="text-center">Picture Three</h2>
+            <div class="row no-gutters ">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/charlotte.jpg') }}');"></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/web.jpg') }}'); "></div>
+            </div>
+            <div class="row no-gutters text-center">
+                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
+                    <form>
+                        <h2>Question Three</h2>
+                        <div class="form-row">
+                            <div class="col-8 text-center">
+                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
+                            </div>
+                            <div class="col-12 col-md-3 text-center">
+                                <button type="submit" class="btn btn-block btn-lg btn-primary">Enter</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+        <!----------------------------------- Questoin Four ----------------------------------------------->
+        <div id="picture-container-4" class="container-fluid p-0 ">
+            <h2 class="text-center">Picture Four</h2>
+            <div class="row no-gutters ">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/jungle.jpg') }}');"></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/book.jpg') }}'); "></div>
+            </div>
+            <div class="row no-gutters text-center">
+                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
+                    <form>
+                        <h2>Question Four</h2>
+                        <div class="form-row">
+                            <div class="col-8 text-center">
+                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
+                            </div>
+                            <div class="col-12 col-md-3 text-center">
+                                <button type="submit" class="btn btn-block btn-lg btn-primary">Enter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+        <!----------------------------------- Questoin Five ----------------------------------------------->
+        <div id="picture-container-5" class="container-fluid p-0 ">
+            <h2 class="text-center">Picture Five</h2>
+            <div class="row no-gutters ">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/arabian2.jpg') }}');"></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/night.jpg') }}'); "></div>
+            </div>
+            <div class="row no-gutters text-center">
+                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
+                    <form>
+                        <h2>Question Five</h2>
+                        <div class="form-row">
+                            <div class="col-8 text-center">
+                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
+                            </div>
+                            <div class="col-12 col-md-3 text-center">
+                                <button type="submit" class="btn btn-block btn-lg btn-primary">Enter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!----------------------------------- Questoin Six ----------------------------------------------->
+        <div id="picture-container-6" class="container-fluid p-0 ">
+            <h2 class="text-center">Picture Six</h2>
+            <div class="row no-gutters ">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/king.jpg') }}');"></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/mine.jpg') }}'); "></div>
+            </div>
+            <div class="row no-gutters text-center">
+                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
+                    <form>
+                        <h2>Question Six</h2>
+                        <div class="form-row">
+                            <div class="col-8 text-center">
+                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
+                            </div>
+                            <div class="col-12 col-md-3 text-center">
+                                <button type="submit" class="btn btn-block btn-lg btn-primary">Enter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -172,20 +282,92 @@
             </div>
         </div>
     </footer>
-    
-    <script>
-    var animationShake = "animation shake";
-    var animationEnd = "animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd";
-        ("submit").on("click", function(){
-           ("input[name=answer]").addClass(animationShake).one(function(){
-               (this).removeClass(animationEnd);
-           }) 
-        });
-    </script>
-    
     <!-- Bootstrap core JavaScript -->
-    <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+        var game = "gameStart";
+
+        function gameSetUp() {
+            console.log("Game Setup");
+        }
+
+        $.fn.extend({
+            animateCss: function(animationName, callback) {
+                var animationEnd = (function(el) {
+                    var animations = {
+                        animation: 'animationend',
+                        OAnimation: 'oAnimationEnd',
+                        MozAnimation: 'mozAnimationEnd',
+                        WebkitAnimation: 'webkitAnimationEnd',
+                    };
+
+                    for (var t in animations) {
+                        if (el.style[t] !== undefined) {
+                            return animations[t];
+                        }
+                    }
+                })(document.createElement('div'));
+
+                this.addClass('animated ' + animationName).one(animationEnd, function() {
+                    $(this).removeClass('animated ' + animationName);
+
+                    if (typeof callback === 'function') callback();
+                });
+
+                return this;
+            },
+        });
+
+        //$(document).ready(function() {  
+        //    $("#start").click(function(e){
+        //        e.preventDefault();
+        //        $("#picture-container").hide().addClass("bounceInLeft")
+        //        $("#picture-container-2").show().addClass("bounceInLeft")
+        //    });
+        //});
+
+
+        $(document).ready(function() {
+            $("#picture-container-2").hide();
+            $("#start").on("click", function() {
+                $("#picture-container").hide("bounceOutLeft");
+                $("#picture-container-2").show("bounceInRight");
+            });
+        });
+
+        // $("#start").on("click", function() {
+        //   $("#picture-container #picture-container-2").show();
+        //    });
+
+
+        //$('#picture-container').animateCss('bounceInLeft', function() {
+        //    $("#picture-container").show("bounceInLeft");
+        //            $("#picture-container-2").show("bounceInLeft");
+        //        });
+
+        //$(document).ready(function() {
+        //    $("#start").on("click", function() {
+        //        $("#picture-container").hide()
+        //        $("#picture-container").animate({ bounceInLeft });
+        //        $("#picture-container-2").show()
+        //    });
+        //});
+
+
+        //var animationShake = "animation shake";
+        //var animationEnd = "animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd";
+
+        //("submit").on("click", function() {
+        //    ("input[name=answer]").addClass(animationShake).one(function() {
+        //        (this).removeClass(animationEnd);
+        //    });
+        //});
+    </script>
+
+
+
+
 
 </body>
 
