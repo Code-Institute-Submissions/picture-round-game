@@ -59,10 +59,13 @@ def add_user_data(user, user_data):
 
 user_data = load_user_data(USER_FILE_NAME)
 
+score = 0
+
 user = {}
-user['score'] = 100
+user['score'] = 1
 user['name'] = input ("What is your name? ")
 user_data.append(user)
+user_answer = input(get_question(0))
 
 write_user_data(USER_FILE_NAME, user_data)
 
@@ -94,7 +97,17 @@ def check_answer(question_number, user_answer):
     result = question["answer"] == user_answer
     
     return result
+    
+if user_answer(get_question, check_answer):
+    print("correct")
+    score = score + 1
+    print("Current score is", score)
+else:
+    print("That is incorrect")
+    print("Current score is", score)
+    
 
+print("Your current score is", score)
 
 print("get_question:", get_question(0))#question one in array
 print("get_question:", get_question(1))#question two
