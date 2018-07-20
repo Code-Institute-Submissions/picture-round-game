@@ -1,10 +1,11 @@
 import os
 import json
 from questions_answers import questions
-
 SCRIPT_PATH = os.path.join(os.getcwd(), os.path.dirname(__file__))
 USER_FILE_NAME = "user_data.json"
-QUESTIONS_FILE_NAME = "questions_answer.json" 
+QUESTIONS_FILE_NAME = "questions_answer.json"
+
+ 
 
 #global user_data 
 user_data = []
@@ -65,7 +66,6 @@ user = {}
 user['score'] = 1
 user['name'] = input ("What is your name? ")
 user_data.append(user)
-user_answer = input(get_question(0))
 
 write_user_data(USER_FILE_NAME, user_data)
 
@@ -97,14 +97,6 @@ def check_answer(question_number, user_answer):
     result = question["answer"] == user_answer
     
     return result
-    
-if user_answer(get_question, check_answer):
-    print("correct")
-    score = score + 1
-    print("Current score is", score)
-else:
-    print("That is incorrect")
-    print("Current score is", score)
     
 
 print("Your current score is", score)
