@@ -1,1 +1,46 @@
-[{"name": "Jim", "score": 100}, {"name": "Kate", "score": 100}, {"name": "Jeo", "score": 100}, {"name": "Smith", "score": 100}, {"name": "SmithTest", "score": 100}, {"name": "Smithy", "score": 100}, {"name": "Cake", "score": 100}, {"name": "Testone", "score": 100}, {"name": "Sarah", "score": 1}, {"name": "Test2", "score": 1}]
+[
+    {
+        "name": "Jim",
+        "score": 100
+    },
+    {
+        "name": "Kate",
+        "score": 100
+    },
+    {
+        "name": "Jeo",
+        "score": 100
+    },
+    {
+        "name": "Smith",
+        "score": 100
+    },
+    {
+        "name": "SmithTest",
+        "score": 100
+    },
+    {
+        "name": "Smithy",
+        "score": 100
+    },
+    {
+        "name": "Cake",
+        "score": 100
+    },
+    {
+        "name": "Testone",
+        "score": 100
+    },
+    {
+        "name": "Sarah",
+        "score": 1
+    },
+    {
+        "name": "Test2",
+        "score": 1
+    },
+    {
+        "name": "foo",
+        "points": 999
+    }
+]
