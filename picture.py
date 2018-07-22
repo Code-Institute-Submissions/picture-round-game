@@ -42,15 +42,15 @@ def list_questions():
 
 
 def get_questions(question_id):
-    with open(questions_answers_file, "r"):
+    with open(questions_answers_file, "r") as questions_answers:
         
-        questions_answers = json.load(questions_answers_file)
+        all_questions_answers = json.load(questions_answers)
         
         def search(question_id, questions_answers):
-            return next((dict for dict in questions_answers if dict["title"] == question_id["title"]), False)
+            return next((dict for dict in questions_answers if dict["id"] == question_id["id"]), False)
         
         if search(question_id, questions_answers):
-            print("question one!!!")
+            print("got question!!!")
         else:
             print("no joy")
 

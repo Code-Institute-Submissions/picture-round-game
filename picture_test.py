@@ -16,9 +16,9 @@ def questions_answers(file_name):
     if not file_name.startswith('/'):
         file_name = os.path.join(SCRIPT_PATH, file_name)
         
-    with open("questions_answers.py") as json_file:
+    with open("questions_answers.json") as json_file:
         dict_data = json.load(json_file.read())
-        print("title" + "photos" + "answer")
+        print("title" + "answer")
     
     return dict_data
     
@@ -91,7 +91,7 @@ def check_answer(question_number, user_answer):
     
     user_answer = user_answer.lower().strip()
     
-    dict_data = open("questions_answers.py", "r")
+    dict_data = open("questions_answers.json", "r")
     question = questions[question_number]
     
     result = question["answer"] == user_answer
@@ -119,3 +119,18 @@ print("check_answer:", check_answer(4, "the arabian nights"))#Answer should retu
 print("check_answer:", check_answer(5, "king solomon's mines"))#Answer should returen true 
 
 print("all tests passed")
+
+#def list_questions():
+#    with open(questions_answers_file,"r").read():
+#        return questions_answers_file
+
+
+#def get_questions(question_id, n):
+#    with open(questions_answers_file, "r").read():
+#        question_id = sorted(questions.values(), key = lambda t:t[1]) #Trying to order the dictionary 
+    
+
+
+#def main(): #Run whole project
+#    if __name__=="__main__":
+#        main()

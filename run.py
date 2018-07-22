@@ -5,17 +5,20 @@ from flask import Flask, render_template, request, redirect
 app = Flask (__name__)
 
 @app.route('/', methods=["GET", "POST"])
-def hello():
-    
+def index():
+    """Main page with instructions """
+    #handle the post request
     if request.method == "POST":
-        username = request.form.get('username', None)
-        return redirect("/?username=" + username)
+        username =request.form.get("username")
+        return redirect("/? username=" + username)
     else:
-        username = request.args.get('username', None)
+        username = request.args.get("username")
+        return render_template("index.html", username=username)
         
-    return render_template("index.html", username=username)
+
     
 @app.route('/answer-question', methods=["POST"])
+
 def answer_question():
     
     if request.method == "POST":
