@@ -1,6 +1,6 @@
 import os
 import json
-from questions_answers import questions
+#from questions_answers import questions
 
 SCRIPT_PATH = os.path.join(os.getcwd(), os.path.dirname(__file__))
 USER_FILE_NAME = "user_data.json"
@@ -36,20 +36,21 @@ def save_user(user_dict):
                 user_data.write(json.dumps(all_user_dicts, sort_keys=True, indent=4, default=str))
 
 
-def list_questions():
-    with open(questions_answers_file,"r").read():
+def list_questions():#Returning all questions from data file
+    with open(questions_answers_file,"r") as all_list_q:
+        list_questions = json.load(all_list_q)
         return questions_answers_file
 
 
-def get_questions(question_id):
+def get_questions(question_id):#Returning question dict from question and answers file
     with open(questions_answers_file, "r") as questions_answers:
         
         all_questions_answers = json.load(questions_answers)
         
-        def search(question_id, questions_answers):
+        def search(question_id, all_questions_answers):
             return next((dict for dict in questions_answers if dict["id"] == question_id["id"]), False)
         
-        if search(question_id, questions_answers):
+        if search(question_id, all_questions_answers):
             print("got question!!!")
         else:
             print("no joy")
