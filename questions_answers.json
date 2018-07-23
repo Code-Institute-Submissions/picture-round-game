@@ -2,31 +2,31 @@ questions = [
     {
         "title": "Question One",
         "answer": "treasure island",
-        "id": "one",
+        "id": 1,
     },
     {
         "title": "Question Two",
         "answer": "batman",
-        "id": "two",
+        "id": 2,
     },
     {
         "title": "Question Three",
         "answer": "charlotte's web",
-        "id": "three",
+        "id": 3,
     },
     {
         "title": "Question Four",
         "answer": "jungle book",
-        "id": "four",
+        "id": 4,
     },
     {
         "title": "Question Five",
         "answer": "the arabian nights",
-        "id": "five",
+        "id": 5,
     },
     {
         "title": "Question Six",
         "answer": "king solomon's mines",
-        "id": "six",
+        "id": 6,
     },
 ]

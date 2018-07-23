@@ -42,5 +42,30 @@
     {
         "name": "foo",
         "points": 999
+    },
+    {
+        "checkpoint": 1,
+        "name": "Something",
+        "score": 0
+    },
+    {
+        "checkpoint": 1,
+        "name": "This is just a test",
+        "score": 0
+    },
+    {
+        "checkpoint": 1,
+        "name": "blablablabla",
+        "score": 0
+    },
+    {
+        "checkpoint": 1,
+        "name": "Andy",
+        "score": 0
+    },
+    {
+        "checkpoint": 1,
+        "name": "cake_tester",
+        "score": 0
     }
 ]

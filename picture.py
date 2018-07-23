@@ -4,7 +4,7 @@ import json
 
 SCRIPT_PATH = os.path.join(os.getcwd(), os.path.dirname(__file__))
 USER_FILE_NAME = "user_data.json"
-questions_answers_file = "questions_answer.json"
+questions_answers_file = "questions_answers.json"
 
 
 def get_user(username):
@@ -36,33 +36,43 @@ def save_user(user_dict):
                 user_data.write(json.dumps(all_user_dicts, sort_keys=True, indent=4, default=str))
 
 
-def list_questions():#Returning all questions from data file
+def list_questions(): # Returning all questions from data file
     with open(questions_answers_file,"r") as all_list_q:
         list_questions = json.load(all_list_q)
         return questions_answers_file
 
 
-def get_questions(question_id):#Returning question dict from question and answers file
-    with open(questions_answers_file, "r") as questions_answers:
+def get_questions(question_id): # Returning question dict from question and answers file
+    with open(questions_answers_file, "r+") as questions_answers:
         
-        all_questions_answers = json.load(questions_answers)
+        all_question_id = json.load(questions_answers)
         
-        def search(question_id, all_questions_answers):
-            return next((dict for dict in questions_answers if dict["id"] == question_id["id"]), False)
+        def search(question_id, questions_answers):
+            return next((dict for dict in questions_answers if dict["id"] == question_id), False)
         
-        if search(question_id, all_questions_answers):
-            print("got question!!!")
+        if search(question_id, questions_answers):
+            print("got question ID!!!")
         else:
             print("no joy")
 
-#def grade_answer(user_obj, question_id, answer):
+def grade_answer(question_id, answer):
+    score = 0
+    with open(questions_answers_file, USER_FILE_NAME, "r+") as user_obj:
+        user_obj = json.load(questions_answers_file, USER_FILE_NAME)
+        
+    if question_id == answer:
+        score = score + 1
+        print("yay you got it")
+    else:
+        print("that is wrong")
+        
 
-#def get_leaderboard():
+# def get_leaderboard():
 
 test_dict = {"name": "foo", "points": 999}
 save_user(test_dict)
 
-#Run whole project
+# Run whole project
 def main():
     if __name__ == "__main__":
         main()
