@@ -3,6 +3,8 @@ questions = [
         "title": "Question One",
         "answer": "treasure island",
         "id": 1,
+        "image_source_one":"/static/img/volisland.png", 
+        "image_source_two": "/static/img/tchest2.jpg",
     },
     {
         "title": "Question Two",

@@ -1,16 +1,22 @@
 import os 
 import json
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 
-from picture import save_user, list_questions, get_questions,  grade_answer
+from picture import save_user, list_questions, get_questions
 #import picture_test2
-
-USER_FILE_NAME = "user_data.json"
 
 app = Flask (__name__)
 
-@app.route('/', methods=["GET", "POST"])
+USER_FILE_NAME = "user_data.json"
+questions_answers_file = "questions_answers.json"
+
+@app.route('/')
 def index():
+    return render_template("index.html")
+
+
+@app.route('/', methods=["GET", "POST"])
+def user():
     """Main page with instructions"""
     # Handle the POST request
     if request.method == "POST":
@@ -31,18 +37,31 @@ def index():
         username = request.args.get("username")
         return render_template("index.html", username=username)
 
+#with open(questions_answers_file) as user_obj:
+#    USER_OBJ = json.load(user_obj)
+
+@app.route("/question")
+def question():
+    with open(questions_answers_file, "r"):
+        return render_template("question.html")
 
 @app.route('/answer-question', methods=["GET","POST"])
 def answer_question():
+    score = 0
     
-    if request.method == "POST":
-        answer = request.form.get("answers" + grade_answer) # Correct answer
-        return redirect("/?answer-question=") # Next answer
-    else:
-        answer = request.args.get("get_questions")
-        return render_template("/question-heading-one")
-    print(request.form)
 
+    
+    #if request.method == "POST":
+        
+        # question_id = request.form.to_dict()
+        
+        # print(question_id)
+        
+        # if request.form["answer"].lower() == question_id["answer"]:
+        #     score += 1
+        #     question_id += 1
+        #     flash("Correct answer")
+        #return render_template("index.html", username="andy")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

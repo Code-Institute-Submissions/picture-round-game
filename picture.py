@@ -29,7 +29,7 @@ def save_user(user_dict):
         
         # for dict in all_user_dicts:
         if search(user_dict, all_user_dicts):
-            print("Found!!!")
+            pass
         else:
             all_user_dicts.append(user_dict)
             with open(USER_FILE_NAME, "w+") as user_data:
@@ -55,19 +55,9 @@ def get_questions(question_id): # Returning question dict from question and answ
         else:
             print("no joy")
 
-def grade_answer(question_id, answer):
-    score = 0
-    with open(questions_answers_file, USER_FILE_NAME, "r+") as user_obj:
-        user_obj = json.load(questions_answers_file, USER_FILE_NAME)
-        
-    if question_id == answer:
-        score = score + 1
-        print("yay you got it")
-    else:
-        print("that is wrong")
-        
-
-# def get_leaderboard():
+#def get_leaderboard():
+    
+    
 
 test_dict = {"name": "foo", "points": 999}
 save_user(test_dict)
