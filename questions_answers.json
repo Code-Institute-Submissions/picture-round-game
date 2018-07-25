@@ -1,34 +1,34 @@
-questions = [
+[
     {
         "title": "Question One",
         "answer": "treasure island",
         "id": 1,
-        "image_source_one":"/static/img/volisland.png", 
-        "image_source_two": "/static/img/tchest2.jpg",
+        "image_source":"https://cdn.shopify.com/s/files/1/1926/1199/products/image_5f0c7400-d110-420d-9f47-ad79204e37a0_1024x1024.jpg?v=1495041642", 
+        "image_source_two": "/static/img/tchest2.jpg"
     },
     {
         "title": "Question Two",
         "answer": "batman",
-        "id": 2,
+        "id": 2
     },
     {
         "title": "Question Three",
         "answer": "charlotte's web",
-        "id": 3,
+        "id": 3
     },
     {
         "title": "Question Four",
         "answer": "jungle book",
-        "id": 4,
+        "id": 4
     },
     {
         "title": "Question Five",
         "answer": "the arabian nights",
-        "id": 5,
+        "id": 5
     },
     {
         "title": "Question Six",
         "answer": "king solomon's mines",
-        "id": 6,
-    },
+        "id": 6
+    }
 ]

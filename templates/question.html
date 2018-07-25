@@ -1,17 +1,18 @@
-{% extends 'index.html' %} {%block content%}   
+{% extends 'index.html' %} {% block content %}   
+{% for member in quest %}
     <section class="showcase">
         <!----------------------------------- Question One ----------------------------------------------->
         <div id="picture-container" class="container-fluid p-0 ">
-            <h2 class="text-center">Picture One</h2>
+            <h2 class="text-center">{{ member.title }}</h2>
             <div class="row no-gutters ">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image" src="{{ image_source_one }}"></div>
-                <div class="col-lg-6 text-white showcase-img" style="background-image" src="{{ image_source_two }}" ></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img"  src="{{ member.image_source }}" alt="Picture for {{ member.title }}"></div>
+                <div class="col-lg-6 text-white showcase-img"  src="{{ member.image_source_two }}" alt="Picture for {{ member.title }}" ></div>
             </div>
             <div class="row no-gutters text-center">
                 <div class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    {% if not answer %}
+                    
                     <form method="POST" action="/answer-question">
-                        <h2>Question One</h2>
+                        <h2>{{ member.title }}</h2><!-------------------------Json title ------------------->
                         <div class="form-row">
                             <div class="col-8 text-center">
                                 <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="1">
@@ -21,12 +22,11 @@
                             </div>
                         </div>
                     </form>
-                    {%else%}
-                        That was the incorrect answer or check your spelling.
-                    {% endif %}
                 </div>
             </div>
         </div>
+{% endfor %}        
+{% endblock %} 
         <!----------------------------------- Question Two ----------------------------------------------->
         <div id="picture-container-2" class="container-fluid p-0 ">
             <h2 name"/question-heading-two" class="text-center">Picture Two</h2>
@@ -36,7 +36,6 @@
             </div>
             <div class="row no-gutters text-center">
                 <div class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    {% if not answer %}
                     <form method="post" action="/answer-question">
                         <h2>Question Two</h2>
                         <div class="form-row">
@@ -48,9 +47,6 @@
                             </div>
                         </div>
                     </form>
-                    {%else%}
-                        That was the incorrect answer.
-                    {% endif %}
                 </div>
             </div>
         </div>
@@ -147,4 +143,3 @@
             </div>
         </div>
     </section>
-{%endblock%} 

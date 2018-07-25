@@ -42,8 +42,10 @@ def user():
 
 @app.route("/question")
 def question():
-    with open(questions_answers_file, "r"):
-        return render_template("question.html")
+    data = []
+    with open("questions_answers.json", "r") as quest_anws_data:
+        data = json.load(quest_anws_data)
+    return render_template("question.html", quest=data)
 
 @app.route('/answer-question', methods=["GET","POST"])
 def answer_question():
