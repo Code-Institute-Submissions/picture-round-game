@@ -3,32 +3,42 @@
         "title": "Question One",
         "answer": "treasure island",
         "id": 1,
-        "image_source":"https://cdn.shopify.com/s/files/1/1926/1199/products/image_5f0c7400-d110-420d-9f47-ad79204e37a0_1024x1024.jpg?v=1495041642", 
-        "image_source_two": "/static/img/tchest2.jpg"
+        "image_source_one":"img/tchest3.jpg", 
+        "image_source_two": "img/volisland.png"
     },
     {
         "title": "Question Two",
         "answer": "batman",
-        "id": 2
+        "id": 2,
+        "image_source_one":"img/bat.jpg", 
+        "image_source_two": "img/man.jpg"
     },
     {
         "title": "Question Three",
         "answer": "charlotte's web",
-        "id": 3
+        "id": 3,
+        "image_source_one":"img/charlotte2.jpg", 
+        "image_source_two": "img/web.jpg"
     },
     {
         "title": "Question Four",
         "answer": "jungle book",
-        "id": 4
+        "id": 4,
+        "image_source_one":"img/jungle.jpg", 
+        "image_source_two": "img/book.jpg"
     },
     {
         "title": "Question Five",
-        "answer": "the arabian nights",
-        "id": 5
+        "answer": "arabian nights",
+        "id": 5,
+        "image_source_one":"img/arabian2.jpg", 
+        "image_source_two": "img/night.jpg"
     },
     {
         "title": "Question Six",
         "answer": "king solomon's mines",
-        "id": 6
+        "id": 6,
+        "image_source_one":"img/king.jpg", 
+        "image_source_two": "img/mine.jpg"
     }
 ]

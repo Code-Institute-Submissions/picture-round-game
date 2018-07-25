@@ -1,12 +1,14 @@
-{% extends 'index.html' %} {% block content %}   
+{% extends 'index.html' %}
+{% block content %}
 {% for member in quest %}
+
     <section class="showcase">
         <!----------------------------------- Question One ----------------------------------------------->
         <div id="picture-container" class="container-fluid p-0 ">
             <h2 class="text-center">{{ member.title }}</h2>
             <div class="row no-gutters ">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img"  src="{{ member.image_source }}" alt="Picture for {{ member.title }}"></div>
-                <div class="col-lg-6 text-white showcase-img"  src="{{ member.image_source_two }}" alt="Picture for {{ member.title }}" ></div>
+                <div class="col-lg-6 text-white showcase-img"  style="background-image: url( {{ url_for('static', filename=member.image_source_one) }} );" alt="Picture for {{ member.title }}"></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img"  style="background-image: url( {{ url_for('static', filename=member.image_source_two) }} );" alt="Picture for {{ member.title }}" ></div>
             </div>
             <div class="row no-gutters text-center">
                 <div class="col-lg-12 order-lg-1 my-auto showcase-text">
@@ -25,121 +27,6 @@
                 </div>
             </div>
         </div>
-{% endfor %}        
-{% endblock %} 
-        <!----------------------------------- Question Two ----------------------------------------------->
-        <div id="picture-container-2" class="container-fluid p-0 ">
-            <h2 name"/question-heading-two" class="text-center">Picture Two</h2>
-            <div class="row no-gutters ">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/bat.jpg') }}');"></div>
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/man.jpg') }}'); "></div>
-            </div>
-            <div class="row no-gutters text-center">
-                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    <form method="post" action="/answer-question">
-                        <h2>Question Two</h2>
-                        <div class="form-row">
-                            <div class="col-8 text-center">
-                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
-                            </div>
-                            <div class="col-12 col-md-3 text-center">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary">Enter</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!----------------------------------- Question Three ----------------------------------------------->
-        <div id="picture-container-3" class="container-fluid p-0 ">
-            <h2 class="text-center">Picture Three</h2>
-            <div class="row no-gutters ">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/charlotte2.jpg') }}');"></div>
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/web.jpg') }}'); "></div>
-            </div>
-            <div class="row no-gutters text-center">
-                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    <form>
-                        <h2>Question Three</h2>
-                        <div class="form-row">
-                            <div class="col-8 text-center">
-                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
-                            </div>
-                            <div class="col-12 col-md-3 text-center">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary">Enter</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!----------------------------------- Question Four ----------------------------------------------->
-        <div id="picture-container-4" class="container-fluid p-0 ">
-            <h2 class="text-center">Picture Four</h2>
-            <div class="row no-gutters ">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/jungle.jpg') }}');"></div>
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/book.jpg') }}'); "></div>
-            </div>
-            <div class="row no-gutters text-center">
-                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    <form>
-                        <h2>Question Four</h2>
-                        <div class="form-row">
-                            <div class="col-8 text-center">
-                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
-                            </div>
-                            <div class="col-12 col-md-3 text-center">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary">Enter</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!----------------------------------- Question Five ----------------------------------------------->
-        <div id="picture-container-5" class="container-fluid p-0 ">
-            <h2 class="text-center">Picture Five</h2>
-            <div class="row no-gutters ">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/arabian2.jpg') }}');"></div>
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/night.jpg') }}'); "></div>
-            </div>
-            <div class="row no-gutters text-center">
-                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    <form>
-                        <h2>Question Five</h2>
-                        <div class="form-row">
-                            <div class="col-8 text-center">
-                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
-                            </div>
-                            <div class="col-12 col-md-3 text-center">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary">Enter</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!----------------------------------- Question Six ----------------------------------------------->
-        <div id="picture-container-6" class="container-fluid p-0 ">
-            <h2 class="text-center">Picture Six</h2>
-            <div class="row no-gutters ">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/king.jpg') }}');"></div>
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('{{url_for('static',filename='img/mine.jpg') }}'); "></div>
-            </div>
-            <div class="row no-gutters text-center">
-                <div class="col-lg-12 order-lg-1 my-auto showcase-text">
-                    <form>
-                        <h2>Question Six</h2>
-                        <div class="form-row">
-                            <div class="col-8 text-center">
-                                <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="answers">
-                            </div>
-                            <div class="col-12 col-md-3 text-center">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary">Enter</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </section>
+{% endfor %}        
+{% endblock %}

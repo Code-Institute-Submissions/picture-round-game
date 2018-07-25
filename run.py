@@ -1,11 +1,11 @@
 import os 
 import json
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, url_for
 
 from picture import save_user, list_questions, get_questions
 #import picture_test2
 
-app = Flask (__name__)
+app = Flask (__name__, static_url_path='/static')
 
 USER_FILE_NAME = "user_data.json"
 questions_answers_file = "questions_answers.json"

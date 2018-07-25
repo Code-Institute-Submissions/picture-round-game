@@ -77,5 +77,15 @@
         "checkpoint": 1,
         "name": "simon",
         "score": 0
+    },
+    {
+        "checkpoint": 1,
+        "name": "john",
+        "score": 0
+    },
+    {
+        "checkpoint": 1,
+        "name": "cake",
+        "score": 0
     }
 ]
