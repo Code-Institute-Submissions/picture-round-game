@@ -1,6 +1,7 @@
 [
     {
         "title": "Question One",
+        "response":"Answer",
         "answer": "treasure island",
         "id": 1,
         "image_source_one":"img/tchest3.jpg", 
@@ -8,6 +9,7 @@
     },
     {
         "title": "Question Two",
+        "response":"Answer",
         "answer": "batman",
         "id": 2,
         "image_source_one":"img/bat.jpg", 
@@ -15,13 +17,15 @@
     },
     {
         "title": "Question Three",
+        "response":"Answer",
         "answer": "charlotte's web",
         "id": 3,
-        "image_source_one":"img/charlotte2.jpg", 
+        "image_source_one":"img/charlotte3.jpg", 
         "image_source_two": "img/web.jpg"
     },
     {
         "title": "Question Four",
+        "response":"Answer",
         "answer": "jungle book",
         "id": 4,
         "image_source_one":"img/jungle.jpg", 
@@ -29,6 +33,7 @@
     },
     {
         "title": "Question Five",
+        "response":"Answer",
         "answer": "arabian nights",
         "id": 5,
         "image_source_one":"img/arabian2.jpg", 
@@ -36,6 +41,7 @@
     },
     {
         "title": "Question Six",
+        "response":"Answer",
         "answer": "king solomon's mines",
         "id": 6,
         "image_source_one":"img/king.jpg", 

@@ -3,7 +3,6 @@
 {% for member in quest %}
 
     <section class="showcase">
-        <!----------------------------------- Question One ----------------------------------------------->
         <div id="picture-container" class="container-fluid p-0 ">
             <h2 class="text-center">{{ member.title }}</h2>
             <div class="row no-gutters ">
@@ -14,7 +13,7 @@
                 <div class="col-lg-12 order-lg-1 my-auto showcase-text">
                     
                     <form method="POST" action="/answer-question">
-                        <h2>{{ member.title }}</h2><!-------------------------Json title ------------------->
+                        <h2>{{ member.response }}</h2><!-------------------------Json title ------------------->
                         <div class="form-row">
                             <div class="col-8 text-center">
                                 <input type="text" class="form-control form-control-lg animated shake" placeholder="What is the Answer?" name="1">

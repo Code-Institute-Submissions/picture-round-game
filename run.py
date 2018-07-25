@@ -10,11 +10,6 @@ app = Flask (__name__, static_url_path='/static')
 USER_FILE_NAME = "user_data.json"
 questions_answers_file = "questions_answers.json"
 
-@app.route('/')
-def index():
-    return render_template("index.html")
-
-
 @app.route('/', methods=["GET", "POST"])
 def user():
     """Main page with instructions"""
@@ -40,6 +35,10 @@ def user():
 #with open(questions_answers_file) as user_obj:
 #    USER_OBJ = json.load(user_obj)
 
+@app.route('/')
+def index():
+    return render_template("index.html")
+
 @app.route("/question")
 def question():
     data = []
@@ -50,8 +49,6 @@ def question():
 @app.route('/answer-question', methods=["GET","POST"])
 def answer_question():
     score = 0
-    
-
     
     #if request.method == "POST":
         
