@@ -12,5 +12,10 @@
     {
         "name": "foo",
         "points": 999
+    },
+    {
+        "checkpoint": 1,
+        "name": "jim",
+        "score": 0
     }
 ]
