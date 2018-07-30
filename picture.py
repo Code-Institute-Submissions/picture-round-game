@@ -7,27 +7,24 @@ USER_FILE_NAME = "user_data.json"
 questions_answers_file = "questions_answers.json"
 
 
-def get_user(username):
-    with open(USER_FILE_NAME, "r").read():
-        user_data = json.load(file)
+def get_user(username):# -------------------------Adding username into user_data
+    with open(USER_FILE_NAME, "r+") as user_data:
+        all_user_dicts = json.load(user_data)
+        
+        for dict in all_user_dicts:
+            if dict["name"] == username:
+                return dict
+            else:
+                return ""
 
-        user_name_user_date = user_data["name"]
-
-        if username != user_name_user_date:
-            user_data["name"] = username
-            file.write(json.dumps(user_data))
-        else:
-            pass
-
-def save_user(user_dict):
+def save_user(user_dict):# ----------------------- Saving username
     with open(USER_FILE_NAME, "r+") as user_data:
         
         all_user_dicts = json.load(user_data)
         
         def search(user_dict, user_data):
             return next((dict for dict in user_data if dict["name"] == user_dict["name"]), False)
-        
-        # for dict in all_user_dicts:
+
         if search(user_dict, all_user_dicts):
             pass
         else:
@@ -36,29 +33,39 @@ def save_user(user_dict):
                 user_data.write(json.dumps(all_user_dicts, sort_keys=True, indent=4, default=str))
 
 
-def list_questions(): # Returning all questions from data file
-    with open(questions_answers_file,"r") as all_list_q:
-        list_questions = json.load(all_list_q)
-        return questions_answers_file
+def list_of_all_questions(question_list):#--------------------List of all questions 
+    with open(questions_answers_file,"r") as all_questions:
+        quest = json.dumps(all_questions)
+        return quest
+        
+
+def get_questions(question_id):#------------------------------Getting question ID 
+    with open(questions_answers_file, "r") as quest_id:
+        quest_id = json.dumps('{"id":""}')
+        quest_id['id']
+        return get_questions
 
 
-def get_questions(question_id): # Returning question dict from question and answers file
-    with open(questions_answers_file, "r+") as questions_answers:
-        
-        all_question_id = json.load(questions_answers)
-        
-        def search(question_id, questions_answers):
-            return next((dict for dict in questions_answers if dict["id"] == question_id), False)
-        
-        if search(question_id, questions_answers):
-            print("got question ID!!!")
-        else:
-            print("no joy")
 
+# def dict_answer_comp():
+#     dict_comp = []
+#     for key, value in zip (USER_FILE_NAME, questions_answers_file):
+#         dict_comp[key, value] = questions_answers_file
+
+
+def users_answers(username_answer):# ------------------ Checking users answer 
+    with open(questions_answers_file,"r") as question:
+        all_users_answers = json.load(question)
+        
+        for dict in all_users_answers:
+            if dict["answer"] == username_answer:
+                pass
+            else:
+                return "Try again"
+
+# print dict_answer_comp
 #def get_leaderboard():
     
-    
-
 test_dict = {"name": "foo", "points": 999}
 save_user(test_dict)
 

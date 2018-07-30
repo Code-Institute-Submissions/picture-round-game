@@ -1,74 +1,5 @@
 [
     {
-        "name": "Jim",
-        "score": 100
-    },
-    {
-        "name": "Kate",
-        "score": 100
-    },
-    {
-        "name": "Jeo",
-        "score": 100
-    },
-    {
-        "name": "Smith",
-        "score": 100
-    },
-    {
-        "name": "SmithTest",
-        "score": 100
-    },
-    {
-        "name": "Smithy",
-        "score": 100
-    },
-    {
-        "name": "Cake",
-        "score": 100
-    },
-    {
-        "name": "Testone",
-        "score": 100
-    },
-    {
-        "name": "Sarah",
-        "score": 1
-    },
-    {
-        "name": "Test2",
-        "score": 1
-    },
-    {
-        "name": "foo",
-        "points": 999
-    },
-    {
-        "checkpoint": 1,
-        "name": "Something",
-        "score": 0
-    },
-    {
-        "checkpoint": 1,
-        "name": "This is just a test",
-        "score": 0
-    },
-    {
-        "checkpoint": 1,
-        "name": "blablablabla",
-        "score": 0
-    },
-    {
-        "checkpoint": 1,
-        "name": "Andy",
-        "score": 0
-    },
-    {
-        "checkpoint": 1,
-        "name": "cake_tester",
-        "score": 0
-    },
-    {
         "checkpoint": 1,
         "name": "andy",
         "score": 0
@@ -79,28 +10,7 @@
         "score": 0
     },
     {
-        "checkpoint": 1,
-        "name": "john",
-        "score": 0
-    },
-    {
-        "checkpoint": 1,
-        "name": "cake",
-        "score": 0
-    },
-    {
-        "checkpoint": 1,
-        "name": "charolotte",
-        "score": 0
-    },
-    {
-        "checkpoint": 1,
-        "name": "lamp",
-        "score": 0
-    },
-    {
-        "checkpoint": 1,
-        "name": "me",
-        "score": 0
+        "name": "foo",
+        "points": 999
     }
 ]

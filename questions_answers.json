@@ -1,6 +1,7 @@
-[
+qa = [
     {
         "title": "Question One",
+        "question": "what is the book", 
         "response":"Answer",
         "answer": "treasure island",
         "id": 1,
@@ -9,6 +10,7 @@
     },
     {
         "title": "Question Two",
+        "question": "what is the movie",
         "response":"Answer",
         "answer": "batman",
         "id": 2,
@@ -17,6 +19,7 @@
     },
     {
         "title": "Question Three",
+        "question": "what is the book",
         "response":"Answer",
         "answer": "charlotte's web",
         "id": 3,
@@ -25,6 +28,7 @@
     },
     {
         "title": "Question Four",
+        "question": "what is the book",
         "response":"Answer",
         "answer": "jungle book",
         "id": 4,
@@ -33,6 +37,7 @@
     },
     {
         "title": "Question Five",
+        "question": "what is the book",
         "response":"Answer",
         "answer": "arabian nights",
         "id": 5,
@@ -41,6 +46,7 @@
     },
     {
         "title": "Question Six",
+        "question": "what is the book",
         "response":"Answer",
         "answer": "king solomon's mines",
         "id": 6,
