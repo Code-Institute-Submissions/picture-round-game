@@ -1,7 +1,7 @@
 import os 
 import json
 from flask import Flask, render_template, request, redirect, flash, url_for, session
-from picture import save_user, get_user, list_questions, get_questions
+from picture import save_user, get_user, list_of_all_questions, get_questions_id
 
 app = Flask (__name__, static_url_path='/static')
 app.secret_key = "my_super_secret_key"
@@ -52,22 +52,27 @@ def answer_question():
             question_id = key
             answer = value
         
-        questions_list = list_questions() # question_list I think is the user's input to the answer?
         
-        # You now have the question_id, and the answer. Next you need to get the entire list of questions and search for the right question
-        get_questions(question_id)
-        list_questions()
+        # question ID received from user. pull question and compare both answers .lower()
+        # -----------------------------FIRST METHOD
+        list_of_all_questions 
+        get_questions_id
         
-        [i for i, j in (get_questions, list_questions) if i == j]
+        [i for i, j in (get_questions_id, list_of_all_questions) if i == j]
         
-        # using the question ID you just received from the user. Then you pull that question out and compare both answers (using .lower() as well)
-        
-        questions_list.lower(str) == list_questions().lower(str)
+        # -----------------------------SECOND METHOD 
+        def search(list_of_all_questions, get_questions_id):
+            return next((dict for dict in get_questions_id if dict["id"].lower() == list_of_all_questions["id"].lower()), False)
+            
+        if search(list_of_all_questions, get_questions_id):
+            pass
+        else:
+            print("wrong question")
+            
+            
+        # list_of_all_questions.lower() == get_questions_id.lower()
         
         # We built a function to compare dicts, perhaps you can use that
-        
-        def search(questions_list, list_questions):
-            return next((dict for dict in questions_list if dict["answer"] == list_questions["answer"]), False)#I am assuming False is a complete match?
         
         
         return render_template("question.html")#This needs to be changed to next question
