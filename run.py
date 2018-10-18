@@ -48,9 +48,10 @@ def answer_question():
         score = 0
         for key, value in request.form.items():
             question_id = key
+            print(question_id)
             answer = value
-            
-            question = get_question_by_id(int(question_id))
+            if question_id:
+                question = get_question_by_id(int(question_id))
             if question['answer'] == answer.lower():
                 score += 10
                 
@@ -64,42 +65,18 @@ def answer_question():
         }
         save_user(user_dict)
         print(user_dict)
-        return render_template("results.html", user_dict=user_dict["name"])
-
-        #return render_template("question.html")#This needs to be changed to next question
+        return render_template("results.html", user_dict=user_dict)
+        
     else:
         username = session["username"]
         
         user_dict = get_user(username)
         print("user_dict", user_dict)
-        #checkpoint = user_dict["checkpoint"]
         
 
         return render_template("question.html", username=username)
 
-# @app.route('/results', methods=["GET"])
-# def results():
-    
-    
-#     score = 0
-#     user_dict = {
-#             "name": session["username"],
-#             "score": score
-#         }
-#     save_user(user_dict)
-#     username = session["username"]
-#     user_dict = get_user(username)
-#     print(user_dict)
-#     return render_template("results.html", user_dict=user_dict["name"])
-    #This is linking to the results html
-    
-    
-    # with open(USER_FILE_NAME, "r") as leaderboard:
-    #     user_leaderboard = json.loads(leaderboard.read())
-    #     print(user_leaderboard)
-        
-        
-    
+  
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
