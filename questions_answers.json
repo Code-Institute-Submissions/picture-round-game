@@ -5,8 +5,8 @@
         "response":"Answer",
         "answer": "treasure island",
         "id": 1,
-        "image_source_one":"img/tchest3.jpg", 
-        "image_source_two": "img/volisland.png"
+        "image_source_one":"img/chest.jpg", 
+        "image_source_two": "img/island.jpg"
     },
     {
         "title": "Question Two",
@@ -14,8 +14,8 @@
         "response":"Answer",
         "answer": "batman",
         "id": 2,
-        "image_source_one":"img/bat.jpg", 
-        "image_source_two": "img/man.jpg"
+        "image_source_one":"img/batmoon.jpg", 
+        "image_source_two": "img/smartman.jpg"
     },
     {
         "title": "Question Three",
@@ -24,7 +24,7 @@
         "answer": "charlotte's web",
         "id": 3,
         "image_source_one":"img/charlotte3.jpg", 
-        "image_source_two": "img/web.jpg"
+        "image_source_two": "img/wetweb.jpg"
     },
     {
         "title": "Question Four",
@@ -32,8 +32,8 @@
         "response":"Answer",
         "answer": "jungle book",
         "id": 4,
-        "image_source_one":"img/jungle.jpg", 
-        "image_source_two": "img/book.jpg"
+        "image_source_one":"img/strongjungle.jpg", 
+        "image_source_two": "img/booksrow.jpg"
     },
     {
         "title": "Question Five",
@@ -41,8 +41,8 @@
         "response":"Answer",
         "answer": "arabian nights",
         "id": 5,
-        "image_source_one":"img/arabian2.jpg", 
-        "image_source_two": "img/night.jpg"
+        "image_source_one":"img/arabianhorse.jpg", 
+        "image_source_two": "img/knight.jpg"
     },
     {
         "title": "Question Six",
@@ -50,7 +50,7 @@
         "response":"Answer",
         "answer": "king solomon's mines",
         "id": 6,
-        "image_source_one":"img/king.jpg", 
-        "image_source_two": "img/mine.jpg"
+        "image_source_one":"img/kinglion.jpg", 
+        "image_source_two": "img/largemine.jpg"
     }
 ]

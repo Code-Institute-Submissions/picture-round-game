@@ -30,6 +30,7 @@ def save_user(user_dict):# --------------------------------------- Saving userna
         if found:
             found['name'] = user_dict['name']
             found['score'] = user_dict['score']
+            #found['checkpoint'] = user_dict['checkpoint']
             with open(USER_FILE_NAME, "w+") as user_data:
                 user_data.write(json.dumps(all_user_dicts, sort_keys=True, indent=4, default=str))
         else:
@@ -52,15 +53,6 @@ def get_question_by_id(question_id):#------------------------------ Getting ques
                 return q
         return None
         
-
-
-
-# def dict_answer_comp():
-#     dict_comp = []
-#     for key, value in zip (USER_FILE_NAME, questions_answers_file):
-#         dict_comp[key, value] = questions_answers_file
-
-
 def users_answers(username_answer):# ---------------------------- Checking users answer 
     with open(questions_answers_file,"r") as question:
         all_users_answers = json.dumps(question)
@@ -71,13 +63,19 @@ def users_answers(username_answer):# ---------------------------- Checking users
             else:
                 return "Try again"
 
-# print dict_answer_comp
-#def get_leaderboard():
+# def user_leaderboard(user_score):
+#     with open(USER_FILE_NAME, "r") as leaderboard:
+#         all_user_leaderboard = json.loads(leaderboard)
+        
+#         found = search(user_score, all_user_leaderboard)
+#         if found:
+#             found['name'] = user_dict['name']
+#             found['score'] = user_dict['score']
 
 #test_dict = {"name": "foo", "points": 999}
 #save_user(test_dict)
 
-# Run whole project
+
 def main():
     if __name__ == "__main__":
         main()

@@ -1,21 +1,94 @@
 [
     {
-        "checkpoint": 1,
-        "name": "andy",
+        "checkpoint": 1, 
+        "name": "andy", 
         "score": 0
-    },
+    }, 
     {
-        "checkpoint": 1,
-        "name": "simon",
-        "score": 0
-    },
+        "checkpoint": 1, 
+        "name": "simon", 
+        "score": 10
+    }, 
     {
-        "name": "foo",
+        "name": "foo", 
         "points": 999
-    },
+    }, 
     {
-        "checkpoint": 1,
-        "name": "jim",
+        "checkpoint": 1, 
+        "name": "jim", 
+        "score": 0
+    }, 
+    {
+        "checkpoint": 1, 
+        "name": "charlotte", 
+        "score": 20
+    }, 
+    {
+        "name": "gab", 
+        "score": 20
+    }, 
+    {
+        "name": "kate", 
+        "score": 20
+    }, 
+    {
+        "name": "Cake", 
+        "score": 1
+    }, 
+    {
+        "name": "Test", 
+        "score": 1
+    }, 
+    {
+        "name": "test", 
+        "score": 10
+    }, 
+    {
+        "name": "test7", 
+        "score": 0
+    }, 
+    {
+        "name": "test8", 
+        "score": 20
+    }, 
+    {
+        "name": "test10", 
+        "score": 20
+    }, 
+    {
+        "name": "test14", 
+        "score": 30
+    }, 
+    {
+        "name": "test_si", 
+        "score": 20
+    }, 
+    {
+        "name": "sileaderboard", 
+        "score": 40
+    }, 
+    {
+        "name": "leaderboardsitest", 
+        "score": 40
+    }, 
+    {
+        "name": "newuser", 
+        "score": 10
+    }, 
+    {
+        "name": "haley", 
+        "score": 0
+    }, 
+    {
+        "name": "testcake", 
+        "score": 40
+    }, 
+    {
+        "name": "admin", 
+        "score": 0
+    }, 
+    {
+        "name": "simoncode", 
         "score": 0
     }
 ]

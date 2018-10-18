@@ -13,7 +13,6 @@ questions_answers_file = "questions_answers.json"
 @app.route('/', methods=["GET", "POST"])
 def user():
     """Main page with instructions"""
-    # Handle the POST request
     if request.method == "POST":
 
         username = request.form.get("username").lower()
@@ -21,14 +20,13 @@ def user():
         
         user_dict = {
             "name": username,
-            "score": 0
+            "score": 0,
         }
 
         save_user(user_dict)
 
         return redirect("/answer-question")
     
-    # Handle the GET request
     else:
         return render_template("index.html")
 
@@ -36,7 +34,7 @@ def user():
 @app.route("/question")
 def question():
     data = []
-    with open("questions_answers.json", "r") as quest_anws_data: # You are telling json that you are planning to read the file
+    with open("questions_answers.json", "r") as quest_anws_data: # telling json we are planning to read file
         data = json.loads(quest_anws_data.read())
     return render_template("question.html", quest=data)
 
@@ -65,50 +63,42 @@ def answer_question():
             "score": score
         }
         save_user(user_dict)
-        return redirect("/results")
-        
+        print(user_dict)
+        return render_template("results.html", user_dict=user_dict["name"])
 
-        # question ID received from user. pull question and compare both answers .lower() to get the correct for which ever question/checkpoint the user is on.
-        # --------------------------------------------FIRST METHOD
-        
-       
-        #[i for i, j in (get_questions_id, list_of_all_questions) if i == j]
-        
-        # --------------------------------------------SECOND METHOD 
-        # def search(list_of_all_questions, get_questions_id):
-        #     return next((dict for dict in get_questions_id if dict["id"].lower() == list_of_all_questions["id"].lower()), False)
-            
-        # if search(list_of_all_questions, get_questions_id):
-        #     pass
-        # else:
-        #     print("wrong question")
-            
-        
-        #Comparing dicts 
-        
-        
-        return render_template("question.html")#This needs to be changed to next question
+        #return render_template("question.html")#This needs to be changed to next question
     else:
         username = session["username"]
         
         user_dict = get_user(username)
         print("user_dict", user_dict)
-        checkpoint = user_dict["checkpoint"]
+        #checkpoint = user_dict["checkpoint"]
         
-        # Get the first question here (or the question on the user's checkpoint)
-        # You have to get a user's JSON dictionary, there is already a function that does it
-        # Then get the "checkpoint" for that user
-        # Then go over a list of all questions, and get the correct question using the checkpoint
-        # Then pass that question as a dictionary to question.html
-        
+
         return render_template("question.html", username=username)
 
-@app.route('/results', methods=["GET"])
-def resulsts():
+# @app.route('/results', methods=["GET"])
+# def results():
     
-    #user_data = get_user_data()
     
-    return render_template("results.html", leaderboard=[1,2,3])
+#     score = 0
+#     user_dict = {
+#             "name": session["username"],
+#             "score": score
+#         }
+#     save_user(user_dict)
+#     username = session["username"]
+#     user_dict = get_user(username)
+#     print(user_dict)
+#     return render_template("results.html", user_dict=user_dict["name"])
+    #This is linking to the results html
+    
+    
+    # with open(USER_FILE_NAME, "r") as leaderboard:
+    #     user_leaderboard = json.loads(leaderboard.read())
+    #     print(user_leaderboard)
+        
+        
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

@@ -1,9 +1,34 @@
 {% extends 'index.html' %}
-
-
 {% block content %}
-Results:
-{%for r in leaderboard %}
-<br> {{r}}
-{%endfor%}
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Well done here is your score</h5>
+        <p class="card-text"><br>
+            Your Score:
+            {%for r in user_dict %}
+            
+            <br> {{r}} <br>
+            
+            {%endfor%}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Leaderboard</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Sarah</li>
+            <li class="list-group-item">Josh</li>
+            <li class="list-group-item">Rich</li>
+            <li class="list-group-item">Jim</li>
+            <li class="list-group-item">Andy</li>
+        </ul>
+        </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
+
