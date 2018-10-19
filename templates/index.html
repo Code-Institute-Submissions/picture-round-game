@@ -12,12 +12,6 @@
     <link rel="stylesheet" href="{{url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" type="text/css">
     <link rel="stylesheet" href="{{url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/overide-stlye.css')}}" type="text/css" />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/animate/bounce-enters/bounceInLeft.css')}}" type="text/css" />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/animate/bounce-enters/bounceInRight.css')}}" type="text/css" />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/animate/bounce-exit/bounceOutLeft.css')}}" type="text/css" />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/animate/bounce-exit/bounceOutRight.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/landing-page.min.css') }}" type="text/css" />
 
 </head>
@@ -26,8 +20,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Picture Round Quiz</a>
-            <a class="btn btn-primary" href="">Sign In</a>
+            <a class="navbar-brand" href="/">Picture Round Quiz</a>
+            <a class="btn btn-primary" href="/">New Game</a>
         </div>
     </nav>
 
@@ -53,13 +47,20 @@
                         </div>
                     </form>
                     {%else%}
-                        Hello {{username}} press start to play the game.
+                        <Hello {{username}} press start to play the game.
                     {% endif %}
                 </div>
             </div>
         </div>
+        
     </header>
-
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <div class="alert alert-dismissible alert-success" role="alert"><strong>{{ message }}</strong></div>
+        {% endfor %}
+        {% endwith %}
+    </div>
     <!-- Icons Grid -->
     <section class="features-icons bg-light text-center">
         <div class="container">
@@ -91,7 +92,6 @@
             </div>
         </div>
     </section>
-    <!--------------------------------------- Need to hide this ------------------------------------------>
     <!-- Image Showcases -->
     {%block content%}
     {% endblock%}
@@ -113,7 +113,6 @@
                     </ol>
                 </div>
             </div>
-            
         </div>
     </section>
     <!-- Footer -->
@@ -163,8 +162,9 @@
         </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script>
         var game = "gameStart";
 

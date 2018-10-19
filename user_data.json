@@ -90,5 +90,29 @@
     {
         "name": "simoncode", 
         "score": 0
+    }, 
+    {
+        "name": "simon-test-2", 
+        "score": 40
+    }, 
+    {
+        "name": "simon-test-3", 
+        "score": 10
+    }, 
+    {
+        "name": "simone", 
+        "score": 40
+    }, 
+    {
+        "name": "simon-session", 
+        "score": 10
+    }, 
+    {
+        "name": "simon-next-q", 
+        "score": 0
+    }, 
+    {
+        "name": "person", 
+        "score": 0
     }
 ]

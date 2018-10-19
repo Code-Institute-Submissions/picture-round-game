@@ -9,6 +9,11 @@ app.secret_key = "my_super_secret_key"
 USER_FILE_NAME = "user_data.json"
 questions_answers_file = "questions_answers.json"
 
+user_dict = {
+            "name": "person",
+            "score": 0,
+        }
+
 
 @app.route('/', methods=["GET", "POST"])
 def user():
@@ -17,14 +22,8 @@ def user():
 
         username = request.form.get("username").lower()
         session["username"] = username
-        
-        user_dict = {
-            "name": username,
-            "score": 0,
-        }
-
         save_user(user_dict)
-
+        flash("Hello, %s press start to play the game." % (session["username"]))
         return redirect("/answer-question")
     
     else:
@@ -41,40 +40,42 @@ def question():
 
 @app.route('/answer-question', methods=["GET","POST"])
 def answer_question():
-    score = 0
+    if "username" not in session:
+        return redirect("index.html")
     
-    if request.method == "POST":
-        
-        score = 0
-        for key, value in request.form.items():
+    session["score"] = 0
+    session["get_question_by_id"] = 0
+    
+    for key, value in request.form.items():
             question_id = key
             print(question_id)
             answer = value
             if question_id:
                 question = get_question_by_id(int(question_id))
             if question['answer'] == answer.lower():
-                score += 10
-                
-        print("score", score)
-        print("username", session["username"])
+                session["get_question_by_id"] +=1
+                session["score"] += 10
+            
+                if session["get_question_by_id"] < len(questions_answers_file):
+                    flash("Correct answer, %s! Your score is %s." % (
+                        session["username"], session["score"]))
+                    print(get_question_by_id)
+                else:
+                    flash("Correct answer, %s!" % session["score"])
+            else:
+                flash("Wrong answer or mispelling, %s. Try again " % (session["username"]))
         
         
-        user_dict = {
-            "name": session["username"],
-            "score": score
-        }
-        save_user(user_dict)
-        print(user_dict)
-        return render_template("results.html", user_dict=user_dict)
-        
-    else:
-        username = session["username"]
-        
-        user_dict = get_user(username)
-        print("user_dict", user_dict)
-        
-
-        return render_template("question.html", username=username)
+    if session["get_question_by_id"] >= len(questions_answers_file):
+        if session["score"] >= user_dict["score"]:
+            user_dict["score"] = session["score"]
+            user_dict["name"] = session["username"]
+        return render_template("results.html", username=session["username"],
+                                score=session["score"],
+                                highscore=user_dict["score"],
+                                higherscore=user_dict["name"])
+    
+    return render_template("results.html")    
 
   
 if __name__ == '__main__':

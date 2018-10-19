@@ -1,34 +1,45 @@
 {% extends 'index.html' %}
 {% block content %}
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Well done here is your score</h5>
-        <p class="card-text"><br>
-            Your Score:
-            {%for r in user_dict %}
-            
-            <br> {{ user_dict.user }}  {{ user_dict.score }}
-            
-            {%endfor%}</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Leaderboard</h5>
-        <ul class="list-group">
-            <li class="list-group-item">Sarah</li>
-            <li class="list-group-item">Josh</li>
-            <li class="list-group-item">Rich</li>
-            <li class="list-group-item">Jim</li>
-            <li class="list-group-item">Andy</li>
-        </ul>
-        </div>
-    </div>
-  </div>
-</div>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Player</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Sarah</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Andy</td>
+      <td>50</td>
+    </tr>
+    <tr class="info">
+      <td>3</td>
+      <td>Micheal</td>
+      <td>40</td>
+    </tr>
+    <tr class="success">
+      <td>4</td>
+      <td>CakeEater</td>
+      <td>30</td>
+    </tr>
+    <tr class="danger">
+      <td>5</td>
+      <td>TeaDrinker</td>
+      <td>20</td>
+    </tr>
+    <tr class="warning">
+      <td>6</td>
+      <td>Superhero</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table> 
 {% endblock %}
 
