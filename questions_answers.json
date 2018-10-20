@@ -23,7 +23,7 @@
         "response":"Answer",
         "answer": "charlotte's web",
         "id": 3,
-        "image_source_one":"img/charlotte3.jpg", 
+        "image_source_one":"img/spider.jpg", 
         "image_source_two": "img/wetweb.jpg"
     },
     {
@@ -51,6 +51,6 @@
         "answer": "king solomon's mines",
         "id": 6,
         "image_source_one":"img/kinglion.jpg", 
-        "image_source_two": "img/largemine.jpg"
+        "image_source_two": "img/mine-two.jpg"
     }
 ]
