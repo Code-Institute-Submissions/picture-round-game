@@ -41,16 +41,16 @@
         "response":"Answer",
         "answer": "arabian nights",
         "id": 5,
-        "image_source_one":"img/arabianhorse.jpg", 
+        "image_source_one":"img/horse-two.jpg", 
         "image_source_two": "img/knight.jpg"
     },
     {
         "title": "Question Six",
         "question": "what is the book",
         "response":"Answer",
-        "answer": "king solomon's mines",
+        "answer": "grapes of wrath",
         "id": 6,
-        "image_source_one":"img/kinglion.jpg", 
-        "image_source_two": "img/mine-two.jpg"
+        "image_source_one":"img/grapes.jpg", 
+        "image_source_two": "img/scotland.jpg"
     }
 ]

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/landing-page.min.css') }}" type="text/css" />
-
+    <link rel="stylesheet" href="{{url_for('static', filename='css/overide-stlye.css')}}" type="text/css" />
 </head>
 
 <body>
@@ -26,7 +26,7 @@
     </nav>
 
     <!-- Masthead -->
-    <header class="masthead text-white text-center showcase-img" style="background-image: url('{{url_for('static',filename='img/greenlight.png') }}');   ">
+    <header class="masthead text-white text-center showcase-img" style="background-image: url('{{url_for('static',filename='img/brownlight.jpg') }}');   ">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -65,19 +65,19 @@
     <section class="features-icons bg-light text-center">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
                             <i class="icon-screen-desktop m-auto text-primary"></i>
                         </div>
                         <h3>Start Game</h3>
-                        <p class="lead mb-0">Check spelling before hitting enter</p>
+                        <p class="lead mb-0">Enter your username first and check your spelling before hitting enter</p>
                     </div>
                     <div>
                         <a id="start" href="{{ url_for('question') }}" class="btn btn-primary">Start</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
                             <i class="icon-check m-auto text-primary"></i>
@@ -89,13 +89,26 @@
                         <a id="btn-answer" class="btn btn-primary" href="#answers-lists">Answers</a>
                     </div>
                 </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        
+                        <div class="features-icons-icon d-flex">
+                            <i class="icon-question m-auto text-primary"></i>
+                        </div>
+                        <h3>Sample Question</h3>
+                        <p class="lead mb-0">This game is simply matching the images with a classic literature or film. Click the sample button to see an example.</p>
+                    </div>
+                    <div>
+                        <a id="btn-sample" class="btn btn-primary" href="#sample">Sample</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <!-- Image Showcases -->
     {%block content%}
     {% endblock%}
-    <hr></hr>
+    
     <section>
         <div id="answers-lists" class="container-fluid p-0 ">
             <h2 class="text-center">No Peaking</h2>
@@ -114,6 +127,18 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="showcase">
+        <div id="sample" >
+            <div class="picture-container" class="container-fluid p-0 ">
+            <h2 class="text-center">Sample Question</h2>
+            <div class="row no-gutters ">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url( {{ url_for('static', filename='img/mouse.jpg' ) }})"></div>
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url( {{ url_for('static', filename='img/men.png') }} )"></div>
+            </div>
+            <h2 class="text-center">Of Mice and Men</h2>
+            </div>
+        </div>    
     </section>
     <!-- Footer -->
     <footer class="footer bg-light">
@@ -137,7 +162,7 @@
                             <a href="#">Privacy Policy</a>
                         </li>
                     </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Picture Round Game 2018. All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
                     <ul class="list-inline mb-0">
@@ -204,6 +229,14 @@
             $("#answers-lists").hide();
             $("#btn-answer").on("click", function(){
                 $("#answers-lists").show();
+            });
+            
+        });
+        $(document).ready(function() {
+            ////////////////////////Working DO NOT DEL
+            $("#sample").hide();
+            $("#btn-sample").on("click", function(){
+                $("#sample").show();
             });
             
         });
