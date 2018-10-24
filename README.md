@@ -9,6 +9,8 @@ https://picture-round.herokuapp.com/
 
 This website provides a simple quiz game with pictures. Away from the norm of a pub quiz that involves some extra thought. 
 
+* Wireframes are located in img/wireframes 
+
 ### User Story
 * The player first sees a prompt to enter there username.
 * Once entered they are greeted with a message welcoming them to the game and to press the start button.
