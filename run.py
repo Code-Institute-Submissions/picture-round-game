@@ -38,20 +38,6 @@ def question():
     return render_template("question.html", quest=data)
 
 
-# @app.route("/game_start", methods=["POST"]) 
-# def start_game():
-    
-#     for key, value in request():
-#             question_id = key
-#             print(question_id)
-#             answer = value
-#             if question_id:
-#                 question = get_question_by_id(int(question_id))
-    
-#     session["username"] = request.form.get("username")
-#     session["score"] = 0
-#     session["id"] = 0
-
 @app.route('/answer-question', methods=["GET","POST"])
 def answer_question():
     if "username" not in session:
@@ -96,39 +82,3 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
-
-
-# def answer_question(): 
-#     if "username" not in session:
-#         return redirect(url_for("index"))
-#     if request.method == "POST" and session["id"] < len(get_question_by_id(id)):
-#         print(request.form) 
-#         previous_question = get_question_by_id(id)[session["id"]]
-#         print(request.form['answer'])
-#         if request.form['answer'+ str(session["id"])]:
-#             print(previous_question)
-#             session["id"] += 1
-#             session["score"] += 10
-#             if session["id"] < len(get_question_by_id(id)):
-#                 flash("Correct answer, %s! Your score is %s." % (
-#                       session["username"], session["score"]))
-#             else:
-#                 flash("Correct answer, %s!" % session["username"])
-        
-#             if session["id"] < len(get_question_by_id(id)):
-#                 flash("Wrong answer, %s. Better luck with this riddle:" % (
-#                       session["username"]))
-#         else:
-#             flash("Wrong answer, %s. You have %s attempts left." % 
-#                   session["username"])
-
-#     if session["id"] >= len(get_question_by_id(id)):
-#         if session["score"] >= user_dict["score"]:
-#             user_dict["score"] = session["score"]
-#             user_dict["name"] = session["username"]
-#         return render_template("results.html", player=session["username"],
-#                               score=session["score"],
-#                               highscore=user_dict["score"],
-#                               highscorer=user_dict["name"])
-
-#     return render_template("results.html", player=session["username"])

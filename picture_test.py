@@ -23,7 +23,7 @@ assert user("") == 0, "No string"
 assert user("A") == 0, "An uppercase"
 assert user("a") == 1, "lower case"
 assert user("!£$%&*") == 0, "special"
-#assert user("CakeUser!23") == 0, "special or fake user"
+
 
 
 def question_one(one):
@@ -38,26 +38,5 @@ def checking_question(actual, expected):
 
 checking_question(first_question(["treasure island"]), "answer")
 
-
-# assert questions("") == False, "no question"
-# assert questions("cake island") == False, "incorrect answer"
-# assert questions("treasure island") == True, "correct answer"
-
-
 print("All tests passed")
 
-
-# def number_of_questions(picture):
-#     return ["q1, q2, q3, q4, q5, q6 "]
-    
-    
-# def picture_round(actual, expected):
-#     assert expected == actual, "Expected {q1}, got {nothong}". format(expected, actual)
-
-# picture_round(number_of_questions(["q1, q2, q3, q4, q5, q6 "]), "q1")
-
-            
-# assert question_answer([]) == False, "No question"
-# assert question_answer(["q1", "q2", "q3", "q4", "q5", "q6"]) == True, "A question"
-
-# print("all tests passed")

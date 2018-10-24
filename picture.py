@@ -63,19 +63,6 @@ def users_answers(username_answer):# ---------------------------- Checking users
             else:
                 return "Try again"
 
-# def user_leaderboard(user_score):
-#     with open(USER_FILE_NAME, "r") as leaderboard:
-#         all_user_leaderboard = json.loads(leaderboard)
-        
-#         found = search(user_score, all_user_leaderboard)
-#         if found:
-#             found['name'] = user_dict['name']
-#             found['score'] = user_dict['score']
-
-#test_dict = {"name": "foo", "points": 999}
-#save_user(test_dict)
-
-
 def main():
     if __name__ == "__main__":
         main()
