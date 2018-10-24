@@ -58,7 +58,6 @@ A strange problem arose with the project where I was unable to show one question
 All the questions showed at once and if I put an enter a question button it behaved as if the all the question had been answered. 
 I tried to fix the problem by rewriting the question function on run.py 
 I kept getting an error message to do with the ID which I put down to the information was not coming from the json file correctly.
-The attempted function is commented out and from 101 down and a support function from lines 41 to 53
 
 # Deployment
 To run the code locally run.py
